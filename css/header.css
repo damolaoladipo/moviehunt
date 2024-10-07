@@ -59,57 +59,113 @@ button {
 /* Hero Section Styles */
 .hero-section {
     color: white;
+    padding: 60px 20px;
     text-align: left;
-    padding: 40px 20px;
+    display: flex;
+    justify-content: center; 
+    
+    
 }
 
 .hero-content {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
+    gap: 50px; 
 }
 
 .hero-text {
     flex: 1;
     margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero-text h1 {
     margin: 0;
-    font-size: 36px;
+    font-size: 47px;
     font-weight: bold;
+    line-height: 1.2;
+    color: #F5C51C;
 }
 
 .hero-text p {
-    font-size: 18px;
-    margin: 15px 0;
+    font-size: 20px;
+    margin: 20px 0;
+    color: #e0e0e0;
 }
 
 .hero-search {
-    flex: 1;
     display: flex;
     justify-content: flex-start;
+    margin-top: 20px;
 }
 
 .hero-search-bar {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 300px;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    width: 350px;
     margin-right: 10px;
+    font-size: 16px;
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+}
+
+.hero-search-bar::placeholder {
+    color: #b0b0b0;
 }
 
 .hero-search-button {
-    padding: 10px 15px;
+    padding: 15px 20px;
     border: none;
-    background-color: #f0a500;
+    background-color: #f5c51c;
     color: black;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .hero-search-button:hover {
     background-color: #e08e00;
+    transform: scale(1.05);
+}
+
+.column-2 {
+    display: flex;
+    justify-content: center;
+}
+
+.column-2 img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.column-2 img:hover {
+    transform: scale(1.05);
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr; /* Stack columns on small screens */
+        text-align: center;
+    }
+
+    .hero-text {
+        margin-right: 0;
+    }
+
+    .hero-search {
+        justify-content: center;
+    }
 }
