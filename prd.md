@@ -42,7 +42,7 @@ Build a movie listing app using Vanilla JavaScript that interacts with an extern
 
 2. **API Integration**
    - Use a publicly available movie database API (TMDb).
-   - Fetch data using JavaScript’s `fetch()` method or `XMLHttpRequest`.
+   - Fetch data using JavaScript’s `fetch()` method.
 
 3. **Routing**
    - Utilize browser history manipulation (`window.history.pushState` and `popstate` event) to create dynamic routing between the movie listing page and the movie details page without reloading the browser.
@@ -106,37 +106,6 @@ Build a movie listing app using Vanilla JavaScript that interacts with an extern
 
 ---
 
-#### **6. Non-functional Requirements**
-
-1. **Performance**
-   - The app should load within a few seconds even with a slow network connection.
-   - Images should be optimized for quick loading times, especially on mobile devices.
-
-2. **Security**
-   - Use secure API keys if required by the external API. Avoid exposing API keys directly in the code (consider using server-side environment variables or API proxies).
-
-3. **Accessibility**
-   - Ensure the app is accessible to screen readers.
-   - Add `alt` text for images and ensure proper keyboard navigation.
-
----
-
-#### **7. Stretch Goals (Optional)**
-
-1. **Search Functionality**
-   - Add a search bar allowing users to search for specific movies by title.
-
-2. **Filter/Sort**
-   - Implement functionality to sort movies by rating, release date, etc., or filter by genre.
-
-3. **Favorites Feature**
-   - Allow users to "favorite" movies and save them locally (using `localStorage`) for later viewing.
-
-4. **Pagination**
-   - Implement pagination or infinite scroll to load more movies as the user scrolls down.
-
----
-
 ### **Development Guide**
 
 1. **API Setup**
@@ -144,7 +113,7 @@ Build a movie listing app using Vanilla JavaScript that interacts with an extern
    - Obtain an API key if required and review the documentation on how to fetch the list of popular movies.
 
 2. **Project Structure**
-   - Break the app into two main pages: 
+   - Break the app into two main pages:
      1. Movie Listing Page (Homepage).
      2. Movie Details Page.
    - Set up the basic HTML and CSS structure for both pages.
@@ -162,5 +131,3 @@ Build a movie listing app using Vanilla JavaScript that interacts with an extern
    - Ensure smooth navigation between pages and proper handling of browser history.
 
 ---
-
-This guide outlines the full project requirements and development approach. Encourage students to plan and test their solutions thoroughly to create a seamless, responsive, and engaging movie listing app.
