@@ -109,7 +109,7 @@ Build a movie listing app using Vanilla JavaScript that interacts with an extern
 ### **Development Guide**
 
 1. **API Setup**
-   - Research and sign up for a movie database API (e.g., TMDb or OMDb).
+   - Research and sign up for a movie database API (TMDb).
    - Obtain an API key if required and review the documentation on how to fetch the list of popular movies.
 
 2. **Project Structure**
