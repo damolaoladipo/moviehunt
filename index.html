@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Hunt</title>
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a class="logo" href="/">
+                <img src="../assets/moviehunt-logo-.png" width="300" alt="Damola Logo"/>
+            </a>
+            <div class="navigation">
+                <a href="/html/index.html">Home</a>
+                <a href="#">New Movies</a>
+                <a href="#">Movies</a>
+                <a href="#">TV Series</a>
+            </div>
+            <div class="actions">
+                <button class="signin-button">Sign In</button>
+                <!-- <button class="register-button">Register</button> -->
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="column-1"> 
+                <div class="hero-text">
+                    <h1>Welcome to Movie Hunt!</h1>
+                    <p>List of movies and TV shows I, Damola Oladipo have watched till date. Explore what I have watched and also feel free to make a suggestion. 😉</p>
+                </div>
+                <div class="hero-search">
+                    <input type="text" class="hero-search-bar" placeholder="Search Movies or TV Shows">
+                    <button class="hero-search-button">Search</button>
+                </div>
+            </div>
+            <div class="column-2">
+                <div> 
+                    <img src="../assets/bionic-.png" width="300" alt="bionic-"/>
+                </div>
+            </div>
+            
+
+
+        </div>
+    </section>
+    
+
+    <main id="movies-container"></main>
+
+    <script src="./js/moviecard.js"></script>
+</body>
+</html>
