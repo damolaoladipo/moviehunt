@@ -8,11 +8,13 @@ body {
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
+  justify-content: center; 
+  max-width: 1300px; 
 }
 
 .movie-card {
   position: relative;
-  width: 300px;
+  width: 23%; 
   height: 450px;
   background-size: cover;
   background-position: center;
@@ -48,4 +50,17 @@ body {
 .release-year, .genre, .ratings, .duration {
   margin: 5px 0;
   font-size: 14px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 1200px) {
+  .movie-card {
+    width: 48%; 
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-card {
+    width: 100%; 
+  }
 }
