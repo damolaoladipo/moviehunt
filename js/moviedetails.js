@@ -1,7 +1,3 @@
-
-
-
-
 // Function to render hero and display sections
 function renderMovieDetails(movie) {
     // Render the Hero Section
@@ -20,20 +16,37 @@ function renderMovieDetails(movie) {
     document.getElementById('cast').innerHTML = `Cast: ${movie.cast.join(', ')}`;
 }
 
-// Sample movie data
-const movieData = {
-    original_title: "Legend of the Seeker",
-    overview: "This is an overview of legend of the seeker, curated for endless inspiration and suggestions.",
-    release_date: "October 15, 1999",
-    runtime: "2h 19min",
-    genre: "Sci-Fi, Action",
-    cast: [
-        "Paul Carafotes", "George Maguire", "Bennie E. Moore", "Valerie Bickford", "Michael Girardin",
-        "Ezra Buzzington", "Evan Mirand", "Mark Fite", "Brad Pitt", "Edward Norton", "Helena Bonham Carter"
-    ],
-    poster_path: "../assets/bionic.jpg",  // Poster path
-    backdrop_path: "../assets/bionic.jpg"  // Backdrop path
-};
+const apiUrl = 'https://api.themoviedb.org/3'
+const apiKey = '2145839607d0b6dc4655536002039922'
+
+// Fetch data from an API
+async function fetchMovieDetails() {
+    try {
+        const response = await fetch(`${apiUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=1`);  // Replace with your API URL
+        const data = await response.json();
+
+        // Example response structure
+        const movieData = {
+            title: data.title,
+            overview: data.overview,
+            release_date: data.release_date,
+            runtime: data.runtime,
+            genres: data.genres,
+            cast: data.cast.slice(0, 5).map(actor => actor.name),  // Assuming 'cast' is an array in the API response
+            poster_path: `https://image.tmdb.org/t/p/w500${data.poster_path}`,  // Image base path + poster path from API
+            backdrop_path: `https://image.tmdb.org/t/p/w500${data.backdrop_path}`  // Image base path + backdrop path
+        };
+
+        // Render the movie data
+        renderMovieDetails(movieData);
+
+    } catch (error) {
+        console.error('Error fetching movie data:', error);
+    }
+}
+
+// Call the fetch function
+fetchMovieDetails();
 
 // Call the function to render the movie details
 renderMovieDetails(movieData);
