@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Page | Movie Hunt</title>
+    <link rel="stylesheet" href="./css/section.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/moviedetail.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="logo" href="/">
+          <img
+            src="../assets/moviehunt-logo.png"
+            width="200"
+            alt="moviehunt logo"
+          />
+        </a>
+        <div class="navigation">
+          <a href="/moviedetail.html">Movies</a>
+          <a href="#">TV Series</a>
+          <a href="#">People</a>
+          <a href="#">More</a>
+        </div>
+        <div class="actions">
+          <button class="signin-button">Sign In</button>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="section-1">
+          <div class="hero-text">
+            <h1 id="hero-title"></h1>
+            <p id="hero-overview"></p>
+          </div>
+          <div class="actions">
+            <button id="trailer-button" class="trailer-button">
+              Watch Trailer
+            </button>
+            <button id="watch-button" class="watch-button">Watch Now</button>
+          </div>
+        </div>
+        <div class="section-2">
+          <div class="back_drop">
+            <img id="backdrop-img" src="" alt="bionic" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="display-section">
+      <div class="display-content">
+        <div class="col-2">
+          <div class="poster_path">
+            <img id="poster-img" src="" alt="bionic" />
+          </div>
+        </div>
+        <div class="col-1">
+          <h1 id="display-title"></h1>
+          <p id="display-overview"></p>
+          <p id="release-date"></p>
+          <p id="runtime"></p>
+          <p id="genre"></p>
+          <b id="cast"></b>
+        </div>
+      </div>
+    </section>
+
+    <div id="movie-details-container">
+        <button id="back-button">Back</button>
+    </div>
+
+    <script src="./js/moviedetails.js"></script>
+  </body>
+</html>
