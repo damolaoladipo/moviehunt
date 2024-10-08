@@ -47,17 +47,58 @@ function renderMovies(movies) {
     movieCard.classList.add('movie-card');
     movieCard.style.backgroundImage = `url(${movie.poster_path})`;
 
-    movieCard.innerHTML = `
-      <div class="movie-info">
-        <h2 class="movie-title">${movie.original_title}</h2>
-        <p class="genre">Genre: ${movie.genre}</p>
-        <p class="ratings">Ratings: ${movie.ratings}</p>
-      </div>
-    `;
+    // movieCard.innerHTML = `
+    //   <div class="movie-info">
+    //     <h2 class="movie-title">${movie.original_title}</h2>
+    //     <p class="genre">Genre: ${movie.genre}</p>
+    //     <p class="ratings">Ratings: ${movie.ratings}</p>
+    //   </div>
+    // `;
 
     container.appendChild(movieCard);
   });
 }
+
+// Function to search for movies based on the input query
+async function searchMovies(query) {
+    try {
+      const response = await fetch(`${apiUrl}/search/movie?api_key=${apiKey}&query=${query}`);
+      const data = await response.json();
+  
+      if (data.results.length === 0) {
+        alert('No movies found for the search query.');
+        return;
+      }
+  
+      // Map API data to your movie structure
+      const searchResults = data.results.map(movie => ({
+        original_title: movie.title,
+        year: new Date(movie.release_date).getFullYear(),
+        ratings: movie.vote_average + '/10',
+        genre: movie.genre_ids.join(', '),  // You can map genre IDs to actual names using another API if needed
+        duration: 'N/A',  // No runtime provided in this API response
+        poster_path: `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+      }));
+  
+      renderMovies(searchResults); // Render the search results
+  
+    } catch (error) {
+      console.error('Error searching for movies:', error);
+    }
+  }
+  
+  // Add event listener to search button
+  document.querySelector('.hero-search-button').addEventListener('click', () => {
+    const query = document.querySelector('.hero-search-bar').value;
+  
+    if (query.trim() === '') {
+      alert('Please enter a search term.');
+      return;
+    }
+  
+    searchMovies(query);  // Perform the search
+  });
+
 
 // Function to fetch popular movies from TMDb API
 async function fetchPopularMovies() {
@@ -84,5 +125,10 @@ async function fetchPopularMovies() {
   }
 }
 
+
+
 // Fetch popular movies and render on page load
 fetchPopularMovies();
+
+
+
