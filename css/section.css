@@ -79,6 +79,21 @@
     transform: scale(1.05);
 }
 
+/* Simple styles for loading and error messages */
+#loading {
+    display: none;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+#error {
+    display: none;
+    color: red;
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+
 .column-2 {
     display: flex;
     justify-content: center;
