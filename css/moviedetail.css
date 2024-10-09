@@ -48,9 +48,9 @@ body {
 
 .display-content {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns for text and image */
+    grid-template-columns: 1fr 1fr; 
     justify-content: space-between;
-    align-items: start; /* Align content to the top */
+    align-items: start; 
     max-width: 1200px;
     margin: 0 auto;
     gap: 50px; 

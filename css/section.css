@@ -6,10 +6,7 @@
     display: flex;
     justify-content: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    /* background-position: center; */
-       
-    
+    background-size: cover;   
 }
 
 .hero-content {
@@ -117,7 +114,7 @@
 /* Media Queries for smaller screens */
 @media (max-width: 768px) {
     .hero-content {
-        grid-template-columns: 1fr; /* Stack columns on small screens */
+        grid-template-columns: 1fr;
         text-align: center;
     }
 
