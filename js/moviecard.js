@@ -16,19 +16,28 @@ function renderMovies(movies) {
         movieCard.classList.add('movie-card');
         movieCard.style.backgroundImage = `url(${movie.poster_path})`;
 
-         // movieCard.innerHTML = `
-    //   <div class="movie-info">
-    //     <h2 class="movie-title">${movie.original_title}</h2>
-    //     <p class="runtime">Duration: ${movie.duration}</p>
-    //     <p class="genre">Genre: ${movie.genre}</p>
-    //     <p class="ratings">Ratings: ${movie.ratings}</p>
-    //     <p class="year">Year: ${movie.year}</p>
-    //   </div>
-    // `;
-    
-        container.appendChild(movieCard);
+        const movieInfo = `
+        <div class="movie-info">
+          <h2 class="movie-title">${movie.original_title}</h2>
+          <p class="runtime">Duration: ${movie.runtime}</p> <!-- Use runtime instead -->
+          <p class="ratings">Ratings: ${movie.ratings}</p>
+          <p class="year">Year: ${movie.year}</p>
+        </div>
+        `;
 
+        movieCard.innerHTML = movieInfo;
+        container.appendChild(movieCard);
+        movieCard.onclick = ()=>showDetails(movie.id)
     });
+}
+
+function showDetails (e) {
+    // e.preventDefault()
+    console.log(e);
+    
+    localStorage.removeItem("movieId")
+    localStorage.setItem("movieId", e)
+    window.location.href = '/moviedetail.html'
 }
 
 // Function to search for movies based on the input query
@@ -56,11 +65,12 @@ async function searchMovies(query, page = 1) {
             original_title: movie.title,
             year: new Date(movie.release_date).getFullYear(),
             ratings: movie.vote_average + '/10',
-            genre: movie.genre_ids.join(', '),
             duration: 'N/A',
-            poster_path: `https://image.tmdb.org/t/p/w500${movie.poster_path || '../assets/default.jpg'}`
+            poster_path: movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'default_image_url_here',
+            id: movie.id
         }));
 
+        console.log(searchResults)
         renderMovies(searchResults);
     } catch (error) {
         showError('Failed to load movies. Please try again.');
@@ -118,9 +128,16 @@ async function fetchPopularMovies() {
             ratings: movie.vote_average + '/10',
             genre: movie.genre_ids.join(', '),
             duration: 'N/A',
-            poster_path: movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'default_image_url_here'
+            poster_path: movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'default_image_url_here',
+            overview: movie.overview || 'No overview available.',
+            release_date: movie.release_date || 'N/A',
+            runtime: movie.runtime ? movie.runtime + ' minutes' : 'N/A',
+            cast: movie.cast && movie.cast.length > 0 ? movie.cast.slice(0, 5).join(', ') : 'N/A',
+            backdrop_path: movie.backdrop_path ? `https://image.tmdb.org/t/p/w500${movie.backdrop_path}` : 'default-backdrop.jpg',
+            id: movie.id
         }));
 
+        console.log(apiMovies); 
         renderMovies(apiMovies);
     } catch (error) {
         showError('Failed to load popular movies. Please try again.');

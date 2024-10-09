@@ -1,51 +1,62 @@
-// Function to render hero and display sections
-function renderMovieDetails(movie) {
-    // Render the Hero Section
-    document.getElementById('hero-title').textContent = movie.original_title;
-    document.getElementById('hero-overview').textContent = movie.overview;
-    document.getElementById('backdrop-img').src = movie.backdrop_path;
+const apiUrl = 'https://api.themoviedb.org/3';
+const apiKey = '2145839607d0b6dc4655536002039922';
 
-    // Render the Display Section
-    document.getElementById('poster-img').src = movie.poster_path;
-    document.getElementById('display-title').textContent = movie.original_title;
-    document.getElementById('display-overview').textContent = movie.overview;
-    document.getElementById('release-date').textContent = `Release Date: ${movie.release_date}`;
-    document.getElementById('runtime').textContent = `Runtime: ${movie.runtime}`;
-    document.getElementById('genre').textContent = `Genre: ${movie.genre}`;
-    document.getElementById('cast').innerHTML = `Cast: ${movie.cast.join(', ')}`;
+// Function to get movie ID from the URL
+function getMovieId() {
+     const id = localStorage.getItem("movieId")
+     return id
 }
 
-const apiUrl = 'https://api.themoviedb.org/3'
-const apiKey = '2145839607d0b6dc4655536002039922'
+// Fetch and display movie details based on the ID
+async function fetchAndDisplayMovieDetails() {
+    const movieId = getMovieId();
 
-// Fetch data from an API
-async function fetchMovieDetails() {
+    if (!movieId) {
+        console.error('Movie ID not found');
+        return;
+    }
+
     try {
-        const response = await fetch(`${apiUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=1`);  // Replace with your API URL
+        const response = await fetch(`${apiUrl}/movie/${movieId}?api_key=${apiKey}`);
         const data = await response.json();
+        console.log(data);
+        
 
-        // Example response structure
         const movieData = {
             title: data.title,
             overview: data.overview,
             release_date: data.release_date,
             runtime: data.runtime,
-            genres: data.genres,
-            cast: data.cast.slice(0, 5).map(actor => actor.name),  // Assuming 'cast' is an array in the API response
-            poster_path: `https://image.tmdb.org/t/p/w500${data.poster_path}`,  // Image base path + poster path from API
-            backdrop_path: `https://image.tmdb.org/t/p/w500${data.backdrop_path}`  // Image base path + backdrop path
+            genres: data.genres.map(genre => genre.name),
+            poster_path: `https://image.tmdb.org/t/p/w500${data.poster_path}`,
+            backdrop_path: `https://image.tmdb.org/t/p/w500${data.backdrop_path}`,
         };
 
-        // Render the movie data
-        renderMovieDetails(movieData);
-
+        // Populate the HTML with the movie details
+        document.getElementById('hero-section').style.backgroundImage = `url(${movieData.backdrop_path})`
+        document.getElementById('display-title').textContent = movieData.title || 'Title not available';
+        document.getElementById('hero-title').textContent = movieData.title || 'Title not available';
+        document.getElementById('display-title').textContent = movieData.title || 'Title not available';
+        document.getElementById('hero-overview').textContent = movieData.overview || 'No overview available.';
+        document.getElementById('display-overview').textContent = movieData.overview || 'No overview available.';
+        document.getElementById('poster-img').src = movieData.poster_path || 'default-poster.jpg';
+        document.getElementById('release-date').textContent = `Release Date: ${movieData.release_date || 'N/A'}`;
+        document.getElementById('runtime').textContent = `Runtime: ${movieData.runtime ? movieData.runtime + ' minutes' : 'N/A'}`;
+        document.getElementById('genre').textContent = `Genre: ${movieData.genres.length > 0 ? movieData.genres.join(', ') : 'N/A'}`;
+        document.getElementById('backdrop-img').src = movieData.backdrop_path || 'default-backdrop.jpg';
     } catch (error) {
-        console.error('Error fetching movie data:', error);
+        console.error('Error fetching movie details:', error);
     }
 }
 
-// Call the fetch function
-fetchMovieDetails();
+// Load movie details when the page loads
+window.addEventListener('load', fetchAndDisplayMovieDetails);
 
-// Call the function to render the movie details
-renderMovieDetails(movieData);
+
+// Event listener for the back button
+document.getElementById('back-button').addEventListener('click', () => {
+    window.history.back();
+});
+
+// Fetch popular movies on page load
+// document.addEventListener('DOMContentLoaded', fetchPopularMovies);
