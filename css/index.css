@@ -14,10 +14,6 @@ body {
   max-width: 1300px; 
 }
 
-/* #movie-section{
-  max-width: 1300px;  
-} */
-
 .movies-header {
   display: flex;
   color: #ffa624;

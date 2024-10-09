@@ -11,9 +11,9 @@ body {
 #movie-details-container {
     width: 80%;
     max-width: 800px;
-    margin: 20px auto; /* Center the container */
+    margin: 20px auto; 
     display: flex;
-    flex-direction: row; /* Make image and text side by side */
+    flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
 }

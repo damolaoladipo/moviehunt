@@ -57,6 +57,3 @@ window.addEventListener('load', fetchAndDisplayMovieDetails);
 document.getElementById('back-button').addEventListener('click', () => {
     window.history.back();
 });
-
-// Fetch popular movies on page load
-// document.addEventListener('DOMContentLoaded', fetchPopularMovies);
