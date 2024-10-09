@@ -1,6 +1,8 @@
 body {
   font-family: Arial, sans-serif;
   background-color: black;
+  max-width: 1200px;
+  
 }
 
 #movies-container {
@@ -11,6 +13,47 @@ body {
   justify-content: center; 
   max-width: 1300px; 
 }
+
+/* #movie-section{
+  max-width: 1300px;  
+} */
+
+.movies-header {
+  display: flex;
+  color: #ffa624;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  max-width: 1100px;  
+}
+
+.popular-heading {
+  font-size: 24px;
+  margin: 0;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.pagination-button {
+  font-size: 18px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #ffa624;
+  width: 40px;           
+  height: 40px;         
+  border-radius: 50%;
+  border: 2px solid #333
+}
+
+.pagination-button:hover {
+  background-color: #ddd; 
+}
+
+
+
 
 .movie-card {
   position: relative;
@@ -51,6 +94,110 @@ body {
   margin: 5px 0;
   font-size: 14px;
 }
+
+/* Footer Container */
+.footer-container {
+  background-color: #1c1c1c;
+  color: white;
+  padding: 20px 0;
+}
+
+/* Footer Top */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px 40px;
+}
+
+/* Footer Section Styling */
+.footer-section {
+  flex: 1;
+  margin-right: 20px;
+}
+
+/* About Section */
+.footer-section.about p {
+  max-width: 300px;
+  line-height: 1.6;
+}
+
+/* Links Section */
+.footer-section.links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section.links ul li {
+  margin: 10px 0;
+}
+
+.footer-section.links ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-section.links ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Social Media Icons */
+.footer-section.social .social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-section.social .social-icons a {
+  display: inline-block;
+}
+
+.footer-section.social .social-icons img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Subscription Section */
+.footer-section.subscribe p {
+  margin-bottom: 10px;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 10px;
+}
+
+.subscribe-form input[type="email"] {
+  padding: 10px;
+  flex: 1;
+  border: none;
+  border-radius: 5px;
+}
+
+.subscribe-form button {
+  padding: 10px 15px;
+  background-color: #f04a32;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.subscribe-form button:hover {
+  background-color: #d13f28;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  padding: 10px;
+  background-color: #111;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+}
+
 
 
 /* Media query for responsiveness */

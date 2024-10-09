@@ -1,7 +1,6 @@
 // Function to render hero and display sections
 function renderMovieDetails(movie) {
     // Render the Hero Section
-    // document.getElementById('movie-id').textContent = movie.id
     document.getElementById('hero-title').textContent = movie.original_title;
     document.getElementById('hero-overview').textContent = movie.overview;
     document.getElementById('backdrop-img').src = movie.backdrop_path;
