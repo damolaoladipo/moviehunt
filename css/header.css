@@ -1,3 +1,4 @@
+/* General Header and Navigation Styles */
 header nav {
     width: 100%;
     max-width: 1100px;
@@ -53,4 +54,67 @@ button {
     background-color: #ffa624;
     color: black;
     transform: scale(1.05);
+}
+
+/* Responsive Design */
+
+/* Large screens (desktops) */
+@media (min-width: 1024px) {
+    header nav {
+        padding: 20px 50px;
+    }
+
+    header .navigation a {
+        font-size: 18px;
+    }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+   
+    header .navigation {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .actions {
+        margin-top: 10px;
+        gap: 10px;
+    }
+
+    header .navigation a {
+        font-size: 16px;
+    }
+}
+
+/* Small screens (mobiles) */
+@media (max-width: 767px) {
+    header nav {
+        flex-direction: row;
+        padding: 10px 1px;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 90%;
+    }
+
+    /* Hide navigation links on mobile */
+    header .navigation {
+        display: none;
+    }
+
+    /* Keep the actions (button) visible */
+    .actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    button {
+        padding: 8px 20px;
+        font-size: 13px;
+    }
+
+    .signin-button {
+        padding: 8px 30px;
+    }
 }

@@ -1,13 +1,13 @@
 const apiUrl = 'https://api.themoviedb.org/3';
 const apiKey = '2145839607d0b6dc4655536002039922';
 
-// Function to get movie ID from the URL
+// Function to get movie ID from localStorage
 function getMovieId() {
      const id = localStorage.getItem("movieId")
      return id
 }
 
-// Fetch and display movie details based on the ID
+// Fetch and display movie details
 async function fetchAndDisplayMovieDetails() {
     const movieId = getMovieId();
 

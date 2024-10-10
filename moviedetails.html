@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Page | Movie Hunt</title>
+    <link rel="stylesheet" href="./css/section.css" />
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/moviedetail.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="logo" href="/">
+          <img
+            src="../assets/moviehunt-logo.png"
+            width="200"
+            alt="moviehunt logo"
+          />
+        </a>
+        <div class="navigation">
+          <a href="/moviedetails.html">Movies</a>
+          <a href="#">TV Series</a>
+          <a href="#">People</a>
+          <a href="#">More</a>
+        </div>
+        <div class="actions">
+          <button class="signin-button">Sign In</button>
+        </div>
+      </nav>
+    </header>
+
+    <section id="hero-section" class="hero-section">
+      <div class="hero-content">
+        <div class="section-1">
+          <div>
+            <button id="back-button">Back</button>
+          </div>
+
+          <div class="hero-text">
+            <h1 id="hero-title"></h1>
+            <p id="hero-overview"></p>
+          </div>
+          <div class="actions">
+            <button id="trailer-button" class="trailer-button">
+              Watch Trailer
+            </button>
+            <button id="watch-button" class="watch-button">Watch Now</button>
+          </div>
+        </div>
+        <div class="section-2">
+          
+        </div>
+      </div>
+    </section>
+
+    <section class="display-section">
+      <div class="display-content">
+        <div class="col-2">
+          <div class="poster_path">
+            <img id="poster-img" src="" alt="Movie Poster" />
+          </div>
+        </div>
+        <div class="col-1">
+          <h1 id="display-title"></h1>
+          <p id="display-overview"></p>
+          <p id="release-date"></p>
+          <p id="runtime"></p>
+          <p id="genre"></p>
+          <b id="cast"></b>
+        </div>
+      </div>
+    </section>
+
+    
+    <footer class="footer">
+      <div class="footer-content">
+          <div class="footer-section">
+              <h3>Product</h3>
+              <ul>
+                  <li><a href="/">Overview</a></li>
+                  <li><a href="/moviedetails.html">Movies</a></li>
+                  <li><a href="#">TV Series</a></li>
+                  <li><a href="#">Pricing</a></li>
+                  <li><a href="#">Help Center</a></li>
+              </ul>
+          </div>
+          <div class="footer-section">
+              <h3>Company</h3>
+              <ul>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+              </ul>
+          </div>
+          <div class="footer-section">
+              <h3>Company</h3>
+              <ul>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+              </ul>
+          </div>
+          <div class="footer-section">
+              <h3>Follow Us</h3>
+              <div class="social-icons">
+                  <a href="#" target="_blank" aria-label="Facebook"><img src="../assets/linkedin.svg" alt="Facebook" /></a>
+                  <a href="#" target="_blank" aria-label="Twitter"><img src="../assets/x.svg" alt="Twitter" /></a>
+                  <a href="#" target="_blank" aria-label="Instagram"><img src="../assets/instagram.svg" alt="Instagram" /></a>
+                  <a href="#" target="_blank" aria-label="YouTube"><img src="../assets/youtube.svg" alt="YouTube" /></a>
+              </div>
+          </div>
+      </div>
+      <div class="bottom-footer">
+          <div class="footer-bottom">
+              <p>&copy; 2024 Movie Hunt. All rights reserved.</p>
+          </div>
+          <div class="footer-bottom">
+              <p>Made with ❤️ in Lagos, Nigeria.</p>
+          </div>
+      </div>
+      
+  </footer>
+
+    <script src="./js/movieDetails.js"></script>
+  </body>
+</html>

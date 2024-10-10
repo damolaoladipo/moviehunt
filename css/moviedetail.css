@@ -16,6 +16,7 @@ body {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
 .movie-details img {
@@ -98,4 +99,70 @@ body {
 
 .col-2 img:hover {
     transform: scale(1.05);
+}
+
+/* Responsive Design */
+
+/* Large screens (desktops) */
+@media (min-width: 1024px) {
+    #movie-details-container {
+        flex-direction: row; /* Keep side-by-side layout */
+    }
+
+    .display-content {
+        grid-template-columns: 1fr 1fr; /* 2 columns */
+    }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1023px) {
+    #movie-details-container {
+        flex-direction: column; /* Stack details vertically */
+        align-items: center;
+    }
+
+    .display-content {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 30px;
+    }
+
+    .col-1 h1 {
+        font-size: 36px; /* Adjust font size */
+    }
+
+    .col-1 p {
+        font-size: 16px; /* Adjust font size */
+    }
+}
+
+/* Small screens (mobiles) */
+@media (max-width: 767px) {
+    #movie-details-container {
+        flex-direction: column;
+        align-items: center;
+        width: 90%; /* Reduce width on smaller screens */
+    }
+
+    .display-content {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 20px;
+    }
+
+    .col-1 h1 {
+        font-size: 32px; /* Further reduce heading size */
+    }
+
+    .col-1 p {
+        font-size: 20px; /* Further reduce paragraph size */
+    }
+
+    #back-button {
+        font-size: 16px; 
+        padding: 8px 15px;
+    }
+
+    .col-2 img {
+        max-width: 100%;
+        border-radius: 10px; /* Slightly smaller border-radius */
+    }
 }

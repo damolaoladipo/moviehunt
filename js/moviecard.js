@@ -1,10 +1,37 @@
 let currentPage = 1;
 let isSearching = false;
+
+
 const apiUrl = 'https://api.themoviedb.org/3';
 const apiKey = '2145839607d0b6dc4655536002039922';
 
 const loadingIndicator = document.getElementById('loading');
 const errorMessage = document.getElementById('error');
+
+
+// load array of image into hero section
+document.addEventListener('DOMContentLoaded', function(){
+    
+const images = [
+    '../assets/rebel-moon.jpg',
+    '../assets/uglies.jpg',
+    '../assets/abyss.jpg',
+    '../assets/code8.jpg',
+    '../assets/rebel-ridge.jpg'
+]
+
+const heroImage = document.getElementById('heroImage')
+let currentIndex = 0
+
+function changeImage() {
+    currentIndex = (currentIndex + 1)% images.length
+    heroImage.src = images[currentIndex]
+}
+setInterval (changeImage, 1000)
+
+
+})
+
 
 // Function to render movie cards
 function renderMovies(movies) {
@@ -18,7 +45,7 @@ function renderMovies(movies) {
 
         const movieInfo = `
         <div class="movie-info">
-         
+         <h2 class="movie-title">${movie.original_title}</h2>
         </div>
         `;
 
@@ -34,7 +61,7 @@ function showDetails (e) {
     
     localStorage.removeItem("movieId")
     localStorage.setItem("movieId", e)
-    window.location.href = '/moviedetail.html'
+    window.location.href = '/moviedetails.html'
 }
 
 // Function to search for movies based on the input query
