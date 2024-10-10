@@ -16,7 +16,7 @@ body {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    flex-wrap: wrap;
 }
 
 .movie-details img {
@@ -33,6 +33,7 @@ body {
     border-radius: 5px;
     margin-bottom: 20px;
     font-size: 16px;
+    transition: background-color 0.3s ease; /* Transition for button hover */
 }
 
 #back-button:hover {
@@ -94,14 +95,12 @@ body {
     height: auto;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Maintain consistency in transitions */
 }
 
 .col-2 img:hover {
     transform: scale(1.05);
 }
-
-/* Responsive Design */
 
 /* Large screens (desktops) */
 @media (min-width: 1024px) {
@@ -123,7 +122,7 @@ body {
 
     .display-content {
         grid-template-columns: 1fr; /* Single column */
-        gap: 30px;
+        gap: 30px; /* Maintain consistent spacing */
     }
 
     .col-1 h1 {
@@ -145,7 +144,7 @@ body {
 
     .display-content {
         grid-template-columns: 1fr; /* Single column */
-        gap: 20px;
+        gap: 20px; /* Maintain spacing */
     }
 
     .col-1 h1 {
@@ -158,7 +157,7 @@ body {
 
     #back-button {
         font-size: 16px; 
-        padding: 8px 15px;
+        padding: 8px 15px; /* Consistent padding */
     }
 
     .col-2 img {

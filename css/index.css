@@ -60,6 +60,12 @@ body {
   overflow: hidden;
   color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.movie-card:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
 }
 
 .movie-card::before {
@@ -72,6 +78,9 @@ body {
   background: rgba(0, 0, 0, 0.5);
 }
 
+.movie-card:hover::before {
+  opacity: 0.7; 
+}
 .movie-info {
   position: absolute;
   bottom: 20px;

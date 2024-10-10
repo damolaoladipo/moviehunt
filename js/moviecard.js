@@ -45,7 +45,6 @@ function renderMovies(movies) {
 
         const movieInfo = `
         <div class="movie-info">
-         <h2 class="movie-title">${movie.original_title}</h2>
         </div>
         `;
 
