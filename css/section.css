@@ -89,14 +89,14 @@
 
 @media (max-width: 768px) {
     .hero-section {
-        padding: 50px 10px;
+        padding: 20px 10px;
         justify-content: flex-start;
     }
 
     .hero-content {
         grid-template-columns: 1fr;
         max-width: 100%;
-        gap: 40px;
+        gap: 4px;
     }
 
     .hero-image {
@@ -106,6 +106,7 @@
         justify-content: center;
         object-fit: cover;
         height: auto;
+        display: none;
     }
 
     .hero-text h1 {
