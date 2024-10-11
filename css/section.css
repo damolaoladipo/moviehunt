@@ -18,6 +18,7 @@
     max-width: 1000px;
     margin: 0 auto;
     gap: 10px;
+    padding: 20px;
 }
 
 .hero-text {
@@ -82,21 +83,19 @@
 
 .hero-image {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure the image covers its container */
+    height: auto;
+    object-fit: cover;
 }
 
-
-/* Mobile View (max-width: 768px) */
 @media (max-width: 768px) {
     .hero-section {
-        padding: 50px 10px; /* Adjust padding to fit mobile screens */
-        justify-content: flex-start; /* Align content to the left */
+        padding: 50px 10px;
+        justify-content: flex-start;
     }
 
     .hero-content {
-        grid-template-columns: 1fr; /* Stack the content vertically */
-        max-width: 100%; /* Take full width on mobile */
+        grid-template-columns: 1fr;
+        max-width: 100%;
         gap: 40px;
     }
 
@@ -110,29 +109,29 @@
     }
 
     .hero-text h1 {
-        font-size: 32px; /* Smaller font size for mobile */
+        font-size: 32px;
         text-align: left;
     }
 
     .hero-text p {
-        font-size: 16px; /* Adjust paragraph font size */
+        font-size: 16px;
         text-align: left;
     }
 
     .hero-search {
-        flex-direction: column; /* Stack search bar and button vertically */
-        align-items: stretch;   /* Ensure they take full width */
-        width: 100%;            /* Full width on mobile */
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
     }
 
     .hero-search-bar {
-        width: 92%; /* Full width search bar */
-        margin-right: 0; /* Remove right margin */
-        margin-bottom: 10px; /* Add space between the bar and button */
+        width: 92%;
+        margin-right: 0;
+        margin-bottom: 10px;
     }
 
     .hero-search-button {
-        width: 100%; /* Full width button */
-        margin: 0; /* Remove top margin for consistent spacing */
+        width: 100%;
+        margin: 0;
     }
 }

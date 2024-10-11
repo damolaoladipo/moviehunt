@@ -12,13 +12,7 @@ const errorMessage = document.getElementById('error');
 // load array of image into hero section
 document.addEventListener('DOMContentLoaded', function(){
     
-const images = [
-    '../assets/rebel-moon.jpg',
-    '../assets/uglies.jpg',
-    '../assets/abyss.jpg',
-    '../assets/code8.jpg',
-    '../assets/rebel-ridge.jpg'
-]
+const images = []
 
 const heroImage = document.getElementById('heroImage')
 let currentIndex = 0
@@ -27,7 +21,7 @@ function changeImage() {
     currentIndex = (currentIndex + 1)% images.length
     heroImage.src = images[currentIndex]
 }
-setInterval (changeImage, 1000)
+//setInterval (changeImage, 1000)
 
 
 })
@@ -106,7 +100,7 @@ async function searchMovies(query, page = 1) {
 // Show loading indicator
 function showLoading() {
     loadingIndicator.style.display = 'block';
-    errorMessage.style.display = 'none'; // Hide error message
+    errorMessage.style.display = 'none'; 
 }
 
 // Hide loading indicator
@@ -129,7 +123,7 @@ document.querySelector('.hero-search-button').addEventListener('click', () => {
         return;
     }
 
-    searchMovies(query); // Start search with the first page of results
+    searchMovies(query); 
 });
 
 // Function to fetch popular movies with pagination
@@ -177,7 +171,7 @@ document.getElementById('prev-page').addEventListener('click', () => {
 
         if (isSearching) {
             const query = document.querySelector('.hero-search-bar').value;
-            searchMovies(query, currentPage); // Pass current page
+            searchMovies(query, currentPage); 
         } else {
             fetchPopularMovies();
         }
@@ -189,7 +183,7 @@ document.getElementById('next-page').addEventListener('click', () => {
 
     if (isSearching) {
         const query = document.querySelector('.hero-search-bar').value;
-        searchMovies(query, currentPage); // Pass current page
+        searchMovies(query, currentPage); 
     } else {
         fetchPopularMovies();
     }
